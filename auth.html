@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login / Signup — Agriculture Supporter</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<div class="auth-wrap">
+  <div class="container">
+    <div class="text-center mb-4">
+      <a href="index.html" class="brand justify-content-center d-flex" style="color:#fff;"><span class="brand-mark">🌾</span> Agriculture Supporter</a>
+    </div>
+
+    <div class="auth-card row g-0">
+      <!-- Left decorative panel -->
+      <div class="col-lg-5 auth-side">
+        <span class="leaf-particle" style="top:12%;left:15%;">🌿</span>
+        <span class="leaf-particle" style="top:60%;left:70%;">🌾</span>
+        <span class="leaf-particle" style="top:80%;left:20%;">🍃</span>
+        <h2 class="text-white">Grow smarter, from day one.</h2>
+        <p class="text-white-50 mt-3">Your account connects you to crop guides, animal husbandry references, and location-based recommendations — all backed by a real database.</p>
+        <ul class="list-unstyled mt-4 text-white-50">
+          <li class="mb-2"><i class="bi bi-check2 me-2 text-white"></i>Free to create</li>
+          <li class="mb-2"><i class="bi bi-check2 me-2 text-white"></i>Secure, database-backed login</li>
+          <li><i class="bi bi-check2 me-2 text-white"></i>Personalised dashboard</li>
+        </ul>
+      </div>
+
+      <!-- Right form panel -->
+      <div class="col-lg-7 auth-form-side">
+        <ul class="nav nav-tabs auth-tabs" id="authTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#loginPane" type="button" role="tab">Log In</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="signup-tab" data-bs-toggle="tab" data-bs-target="#signupPane" type="button" role="tab">Sign Up</button>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <!-- LOGIN -->
+          <div class="tab-pane fade show active" id="loginPane" role="tabpanel">
+            <form id="loginForm" novalidate>
+              <div class="mb-3">
+                <label class="form-label fw-semibold" for="loginEmail">Email address</label>
+                <input type="email" class="form-control form-control-ag" id="loginEmail" placeholder="you@example.com" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label fw-semibold" for="loginPassword">Password</label>
+                <input type="password" class="form-control form-control-ag" id="loginPassword" placeholder="••••••••" required minlength="6">
+              </div>
+              <div id="loginMsg" class="auth-msg d-none mb-3"></div>
+              <button type="submit" class="btn-wheat w-100">Log In</button>
+              <p class="text-center text-muted small mt-3 mb-0">No account? <a href="#" onclick="document.getElementById('signup-tab').click();return false;">Sign up here</a></p>
+            </form>
+          </div>
+
+          <!-- SIGNUP -->
+          <div class="tab-pane fade" id="signupPane" role="tabpanel">
+            <form id="signupForm" novalidate>
+              <div class="mb-3">
+                <label class="form-label fw-semibold" for="signupName">Full name</label>
+                <input type="text" class="form-control form-control-ag" id="signupName" placeholder="Anjali Menon" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label fw-semibold" for="signupEmail">Email address</label>
+                <input type="email" class="form-control form-control-ag" id="signupEmail" placeholder="you@example.com" required>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label fw-semibold" for="signupPassword">Password</label>
+                  <input type="password" class="form-control form-control-ag" id="signupPassword" placeholder="••••••••" required minlength="6">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label fw-semibold" for="signupConfirm">Confirm password</label>
+                  <input type="password" class="form-control form-control-ag" id="signupConfirm" placeholder="••••••••" required minlength="6">
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label fw-semibold" for="signupFarmType">Primary interest</label>
+                <select class="form-select form-control-ag" id="signupFarmType">
+                  <option>General</option>
+                  <option>Animal Husbandry</option>
+                  <option>Crop Production</option>
+                  <option>Both</option>
+                </select>
+              </div>
+              <div id="signupMsg" class="auth-msg d-none mb-3"></div>
+              <button type="submit" class="btn-wheat w-100">Create Account</button>
+              <p class="text-center text-muted small mt-3 mb-0">Already have an account? <a href="#" onclick="document.getElementById('login-tab').click();return false;">Log in</a></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ CREATORS ============ -->
+    <div class="mt-5 pt-3">
+      <h3 class="text-center text-white mb-1">Built by</h3>
+      <p class="text-center text-white-50 mb-4">A DBMS project by</p>
+      <div class="row g-3 justify-content-center">
+        <div class="col-6 col-md-3">
+          <div class="creator-card"><div class="creator-avatar">AP</div><div class="fw-bold">Arjun S P</div><div class="small text-muted">Backend & Database</div></div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="creator-card"><div class="creator-avatar">SS</div><div class="fw-bold">Sarvesh Sudheer</div><div class="small text-muted">Frontend & UI/UX</div></div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="creator-card"><div class="creator-avatar">NS</div><div class="fw-bold">N Samiksha</div><div class="small text-muted">Data & Content</div></div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="creator-card"><div class="creator-avatar">GR</div><div class="fw-bold">Gayathri Rajeev</div><div class="small text-muted">Testing & Documentation</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ CONTACT US ============ -->
+    <div class="contact-panel mt-5">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <h4 class="text-white mb-2">Contact Us</h4>
+          <p class="text-white-50 mb-0">Have feedback on this project or found an issue? Send us a note — replace this with a real endpoint when the backend is ready.</p>
+        </div>
+        <div class="col-lg-6">
+          <form class="row g-2" id="authContactForm" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Sent ✓'; setTimeout(()=>{this.querySelector('button').textContent='Send';this.reset();},2200);">
+            <div class="col-md-5"><input type="email" class="form-control" placeholder="Your email" required></div>
+            <div class="col-md-5"><input type="text" class="form-control" placeholder="Message" required></div>
+            <div class="col-md-2"><button class="btn-wheat w-100" type="submit">Send</button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-center text-white-50 small mt-4">&copy; <span class="ag-year"></span> Agriculture Supporter. <a href="index.html" class="text-white-50">Back to home</a></p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/auth.js"></script>
+</body>
+</html>
